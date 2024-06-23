@@ -1,0 +1,19 @@
+{
+    "name": "Bit Finder",
+    "short_name": "Bit Finder",
+    "description": "Bit Finder \u00e8 un puzzle game che si basa sulla logica binaria",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "./bitfinder.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "start_url": "/index.html",
+    "scope": "/",
+    "display": "fullscreen",
+    "theme_color": "#852C58",
+    "background_color": "#852C58"
+}
