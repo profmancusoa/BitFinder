@@ -1,0 +1,1 @@
+import{s as n,o as s}from"../chunks/scheduler.BvLojk_z.js";import{S as e,i as a}from"../chunks/index.CN96sRgq.js";import{g as r}from"../chunks/entry.Cma_dzas.js";function i(o){return s(()=>{r("/game")}),[]}class c extends e{constructor(t){super(),a(this,t,i,null,n,{})}}export{c as component};

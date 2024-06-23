@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="./favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link rel="modulepreload" href="./_app/immutable/entry/start.snKq6_mz.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/entry.Cma_dzas.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.BvLojk_z.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.Drn2EmTj.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.CN96sRgq.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.okilVVq7.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.BaKG9CeY.js">
+        <link rel="manifest" href="/manifest.json">
+
+        <style>
+            html, body {
+                margin: 0;
+                overflow: hidden;
+            }
+
+            body {
+                overscroll-behavior-y: contain;
+            }
+        </style>
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">    
+			
+			<script>
+				{
+					__sveltekit_x9vnh2 = {
+						base: new URL(".", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [{"type":"data","data":null,"uses":{}},null];
+
+					Promise.all([
+						import("./_app/immutable/entry/start.snKq6_mz.js"),
+						import("./_app/immutable/entry/app.Drn2EmTj.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2],
+							data,
+							form: null,
+							error: null
+						});
+					});
+
+					if ('serviceWorker' in navigator) {
+						addEventListener('load', function () {
+							navigator.serviceWorker.register('./service-worker.js');
+						});
+					}
+				}
+			</script>
+		</div>
+	</body>
+</html>
