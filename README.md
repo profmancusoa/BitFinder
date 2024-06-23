@@ -8,9 +8,9 @@ Bit Finder è un gioco di logica che richiede pensiero logico e strategia per es
 
 Ecco una breve spiegazione delle regole e del funzionamento del gioco:
 
-- **Griglia**: Takuzu si gioca su una griglia quadrata, solitamente di dimensioni 4x4, 6x6, 8x8, o più grande.
+- **Griglia**: Takuzu si gioca su una griglia quadrata, solitamente di dimensioni 6x6, 8x8, o più grande.
 - **Numeri**: La griglia deve essere riempita con numeri 0 e 1.
 - **Regole di riempimento**:
-  - In ogni riga e colonna, il numero di 0 e 1 deve essere uguale (o differire di uno se la griglia ha dimensioni dispari).
-  - Non ci possono essere più di due 0 o 1 consecutivi in nessuna riga o colonna.
+  - In ogni riga e colonna, il numero di 0 e 1 deve essere uguale.
+  - Non ci possono essere più di tre (6x6) 0 o 1 consecutivi in nessuna riga o colonna.
   - Non ci possono essere righe o colonne identiche.
