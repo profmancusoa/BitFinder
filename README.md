@@ -4,7 +4,7 @@ Bit Finder è un gioco di logica che richiede pensiero logico e strategia per es
 
 <img src="https://github.com/profmancusoa/BitFinder/assets/111191978/b4258ab0-1dd3-4362-9694-ea9ded20faf0" width=350> <br>
 
-<img src="https://github.com/profmancusoa/BitFinder/assets/111191978/572a1e7b-d915-4bef-8842-79f015e25392" width=550>
+<br>
 
 Ecco una breve spiegazione delle regole e del funzionamento del gioco:
 
@@ -14,3 +14,9 @@ Ecco una breve spiegazione delle regole e del funzionamento del gioco:
   - In ogni riga e colonna, il numero di 0 e 1 deve essere uguale.
   - Non ci possono essere più di tre (6x6) 0 o 1 consecutivi in nessuna riga o colonna.
   - Non ci possono essere righe o colonne identiche.
+ 
+<br>
+
+<img src="https://github.com/profmancusoa/BitFinder/assets/111191978/572a1e7b-d915-4bef-8842-79f015e25392" width=550>
+
+
