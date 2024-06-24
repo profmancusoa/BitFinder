@@ -21,7 +21,6 @@
         background-color: #4682b4;
         background-color: #32cd32; */
         background: linear-gradient(to bottom, #FCBD0F,  #FEFA95);
-        
     }
 </style>
 

@@ -4,6 +4,7 @@
 
 <script>
     import { goto } from '$app/navigation';
+    import { restart } from '$lib/js/store.js';
 
     const POPOVER_DELAY = 2000;
     export let board = null;
@@ -19,10 +20,15 @@
 </script>
 
 <!-- check button to start board validation -->
-<div>
+<div class="wrapper">
     <div>
         <span class="material-symbols-outlined icon" on:click={validating}>
             check
+        </span>
+    </div>
+    <div>
+        <span class="material-symbols-outlined icon" on:click={() => { $restart = false; $restart = true }}>
+            restart_alt
         </span>
     </div>
 </div>
@@ -38,6 +44,13 @@ probably better to use a separate component -->
 {/if}
 
 <style>
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2vw;
+    }
+
     .popup {
         width: 14vw;
         aspect-ratio: 1;

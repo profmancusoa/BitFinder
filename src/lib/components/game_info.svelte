@@ -1,16 +1,33 @@
 <script>
     import { onMount } from "svelte";
+    import { restart } from "$lib/js/store.js";
+    import { score_mm, score_ss } from "$lib/js/store.js";
 
+    // let mm = 0;
+    // let ss = 0;
 
-    let mm = 0;
-    let ss = 0;
+    // onMount(() => {
+    //     let timer = setInterval(() => {
+    //         ss++;
+    //         if(ss == 60) {
+    //             ss = 0;
+    //             mm++;
+    //         }
+    //     }, 1000);
 
+    //     return () => {
+    //         clearInterval(timer);
+    //     }
+    // });
     onMount(() => {
+        $score_mm = 0;
+        $score_ss = 0;
+        
         let timer = setInterval(() => {
-            ss++;
-            if(ss == 60) {
-                ss = 0;
-                mm++;
+            $score_ss++;
+            if($score_ss == 60) {
+                $score_ss = 0;
+                $score_mm++;
             }
         }, 1000);
 
@@ -19,10 +36,17 @@
         }
     });
 
+    //reactivity
+    $: {
+        if($restart == true) {
+            $score_mm = 0;
+            $score_ss = 0;
+        }
+    }
 </script>
 <div class="spacer">
     <div class="container">
-        <span class="text-size">{String(mm).padStart(2, '0')}:{String(ss).padStart(2, '0')}</span>
+        <span class="text-size">{String($score_mm).padStart(2, '0')}:{String($score_ss).padStart(2, '0')}</span>
     </div>
 </div>
 

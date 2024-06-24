@@ -1,11 +1,14 @@
 <script>
     import { Cell } from "$lib/js/cell.js";
+    import { createEventDispatcher } from "svelte";
 
     export let cell;
+    let dispatch = createEventDispatcher();
 
     const changeVal = () => {
         if(cell.status != Cell.STATUS_FIX) {
             cell.value = ++cell.value % 2;
+            dispatch('change');
         }
     }
 </script>

@@ -1,6 +1,9 @@
 import { combinations, equal, indexDependencies, matrix, number, numberDependencies } from "mathjs";
 import { Cell } from "./cell.js";
 
+const MIN_HINTS = 8;
+const MAX_HINT = 15;
+
 export class Board {
     #board = [];
     #rows = 0;
@@ -10,12 +13,36 @@ export class Board {
         this.#rows = cols;
         this.#cols = cols;
         this.#board = [...Array(cols)].map((row,i) => [...Array(cols)].map((col,j) => new Cell(i, j, 2)));
-        this.#genRandomVals();        
+        
+        //uncover random cells until board is valid
+        do {
+            this.#resetBoard();
+            this.#uncoverRandomCells();
+        } while(!this.isValidBoard());
     }
 
-    #genRandomVals() {
+    isGameOver() {
+        // the game is over when the board is completely filled in
+        // and the board is a valid board
+        if(this.#board.flat(1).filter(cell => cell.value != 2).length == this.#cols**2) {
+            return this.isValidBoard();
+        }
+
+        return false;
+    }
+
+    #resetBoard() {
+        this.#board.forEach(r => {
+            r.forEach(cell => {
+                cell.value = 2;
+                cell.status = Cell.STATUS_CHANGE;
+            } )
+        })
+    }
+
+    #uncoverRandomCells() {
         let coords = new Set();
-        let maxHints = this.#randomMinMax(8,15);
+        let maxHints = this.#randomMinMax(MIN_HINTS, MAX_HINT);
         let number = 0;
         while(coords.size < maxHints) {
             let r = this.#random(this.#cols);
@@ -44,24 +71,26 @@ export class Board {
         return false;
     }
     
-    // given an array of 1's and 0's 
-    // return true if the array has exactly cols /2 1's
-    #hasones(arr) {
-        return arr.reduce((a, e) => a += e.value, 0) == (this.#cols / 2);
+    // check if in the given line there are too many 1's or 0's
+    #tooManyVals(line, val) {
+        return line.filter(cell => cell.value == val).length > (this.#cols / 2);
     }
 
-    #lineLength(line) {
-        //count all the elements either 1's or 0's
-        return line.filter(cell => cell.value != 2).length;
-    }
-
+    // validate a line of the board
     #isValidLine(line) {
+        // to be valid, a line must not have: 
+        // - consecutive numbers of same value
+        // - too many 1's
+        // - too many 0's
         if(this.#hasConsecutiveVals(line) == true) 
             return false;
         
-        if(this.#lineLength(line) == this.#cols) 
-            return this.#hasones(line);
-    
+        if(this.#tooManyVals(line, 0) == true)
+            return false;
+
+        if(this.#tooManyVals(line, 1) == true)
+            return false;
+
         return true;
     }
 
@@ -69,6 +98,9 @@ export class Board {
         let validRows = true;
         let validCols = true;
         
+        // a board to be valid must have:
+        // - all valid rows 
+        // - all valid columns
         //check if there is at least one row invalid
         for(let row of this.#board)
             validRows &&= this.#isValidLine(row);
