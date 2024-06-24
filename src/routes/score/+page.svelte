@@ -28,16 +28,15 @@
     }
 
     .congrats {
-        font-family: 'Playground', 'Georgia', serif; 
+        /* font-family: 'Playground', 'Georgia', serif;  */
         color: white;
-        text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.7);
+        /* text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.7); */
         font-size: 3vw;
+        font-weight: bolder;
     }
 
     .wrapper {
         --animate-duration: 1.5s;
-        /* display: grid; */
-        /* grid-template-rows: 1fr 8fr; */
         height: 100vh;
         background: linear-gradient(to bottom, #FCBD0F,  #FEFA95);
         display: flex;
@@ -48,7 +47,7 @@
     }
 
     .score {
-        background-color: #32cd32bb;
+        background-color: #32cd32ff;
         width: 60vw;
         height: 60vh;
         border-radius: 2vw;
@@ -79,7 +78,7 @@
         }
 
         .congrats {
-            font-size: 6vw;
+            font-size: 7vw;
         }
 
         .wrapper {
@@ -87,6 +86,7 @@
         }
 
         .score {
+            background-color: #32cd3299;
             width: 80vw;
             height: 60vh;
             border-radius: 4vw;
@@ -96,15 +96,11 @@
         }
 
         .restart {
-            padding: 2vw;
-            border-radius: 1vw;
+            background-color: blue;
+            padding: 3vw;
+            border-radius: 3vw;
             font-size: 6vw;
             font-weight: bolder;
-        }
-
-        .restart:hover {
-            background-color: blue;
-            cursor: pointer;
         }
     }
 </style>

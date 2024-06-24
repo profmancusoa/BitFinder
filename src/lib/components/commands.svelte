@@ -94,5 +94,11 @@ probably better to use a separate component -->
         .icon {
             font-size: 15vw;
         }
+
+        .icon:hover {
+            color: #663300;
+            text-shadow: none;
+            text-shadow: 2px 2px 12px #663300;
+        }
     }
 </style>

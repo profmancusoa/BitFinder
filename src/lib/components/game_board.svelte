@@ -8,8 +8,7 @@
     let board = new Board(6);
 
     const cellChange = () => {
-        if(true)
-        // if(board.isGameOver() == true)
+        if(board.isGameOver() == true)
             goto('/score');
     }   
 
