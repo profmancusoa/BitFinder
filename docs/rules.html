@@ -5,13 +5,15 @@
 		<link rel="icon" href="./favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
+		<link href="./_app/immutable/assets/4.WLU7VQ78.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/animate.B-gXXBrj.css" rel="stylesheet">
 		<link rel="modulepreload" href="./_app/immutable/entry/start.DYEc3Tzk.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/entry.PmCYaWki.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.C8vMPaWB.js">
 		<link rel="modulepreload" href="./_app/immutable/entry/app.Cs44XbQB.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index.DjUm7gUX.js">
 		<link rel="modulepreload" href="./_app/immutable/nodes/0.1dt-e8Xi.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/2.C9Vc0JXj.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/4.DdBB-gpu.js">
         <link rel="manifest" href="/manifest.json">
 
         <style>
@@ -26,7 +28,8 @@
         </style>
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">    
+		<div style="display: contents">  <div class="wrapper animate__animated animate__fadeInDownBig svelte-5ro1ml"><div class="instructions svelte-5ro1ml" data-svelte-h="svelte-zxx0hq">Le regole per giocare a BitFinder sono pochissime:
+        <ul><li class="svelte-5ro1ml">Ogni linea e ogni colonna deve contenere un numero uguale di 1 e 0</li> <li class="svelte-5ro1ml">Ogni linea e ogni colonna non può contenere più di due simboli uguali adiacenti</li> <li class="svelte-5ro1ml">Ogni linea e ogni colonna deve essere diversa da tutte le altre</li></ul></div> <div class="new-game svelte-5ro1ml" data-svelte-h="svelte-1i4m2yl">Nuova Partita</div> </div>  
 			
 			<script>
 				{
@@ -43,7 +46,7 @@
 						import("./_app/immutable/entry/app.Cs44XbQB.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
-							node_ids: [0, 2],
+							node_ids: [0, 4],
 							data,
 							form: null,
 							error: null

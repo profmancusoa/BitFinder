@@ -13,7 +13,7 @@
 
     const validating = () => {
         // goto('/score');
-        isValid = board.isValidBoard();
+        isValid = board.isValidSolution();
         isValidating = true;
         setTimeout(() => { isValidating = false} , POPOVER_DELAY);
     }

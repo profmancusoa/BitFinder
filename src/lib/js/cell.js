@@ -13,6 +13,22 @@ export class Cell {
         this.#c = c;
     }
 
+    get row() {
+        return this.#c;
+    }
+
+    set row(row) {
+        this.#r = row;
+    }
+
+    get col() {
+        return this.#c;
+    }
+
+    set col(col) {
+        this.#c = col;
+    }
+
     get value() {
         return this.#value;
     }
