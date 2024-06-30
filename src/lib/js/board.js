@@ -1,4 +1,5 @@
 import { Cell } from "./cell.js";
+import { solutionsTable } from "./solutions.js";
 
 const MIN_HINTS = 8;
 const MAX_HINT = 15;
@@ -16,10 +17,6 @@ export class Board {
         
         //init board with a valid solution
         this.#solution = this.#findSolutions()
-
-        console.log("BOARD:", this.#board)
-        console.log("SOLUTION:", this.#solution)
-
 
         //uncover random cells until board is valid
         this.#showHints(this.#solution);
@@ -46,26 +43,7 @@ export class Board {
     }
 
     #findSolutions() {
-        //generate all the 2^cols combinations
-        let binCanidates = [];
-        for(let i = 0; i < 2**this.#cols; i++) {
-            let binStr = i.toString(2).padStart(this.#cols, '0');
-            let line = binStr.split('').map(Number)
-            if(this.#isValidLine(line))
-                binCanidates.push(line);
-        }
-
-        //generate D(14,6) disposition of 6 rows out of 14 possible rows
-        let dispositions = this.#generateDisposition(binCanidates, this.#cols)
-
-        let finalBoard = [];
-        for(let disposition of dispositions) {
-            if(this.isValidBoard(disposition))
-                finalBoard.push(disposition)
-        }
-
-        //randomly select one correct solution and assign to board
-        return finalBoard[this.#random(finalBoard.length)];
+        return solutionsTable[this.#random(solutionsTable.length)];
     }
 
     isGameOver() {
@@ -80,7 +58,6 @@ export class Board {
     #showHints(solution) {
         let hints = new Set();
         let maxHints = this.#randomMinMax(MIN_HINTS, MAX_HINT);
-        console.log("max HINTS:", maxHints)
 
         //extract exactly maxHints different row indexes
         while(hints.size < maxHints) {
